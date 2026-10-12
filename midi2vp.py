@@ -113,16 +113,16 @@ def main():
         if last >= 0:
             gap = s - last - 1
             if gap > 0:
-                # pausas: cada hueco de grid = ".", agrupadas: 1 => " ", >= 1 pulso => "-"
-                if gap >= a.grid: out.append(" - " if gap < 2 * a.grid else " -- ")
-                else: out.append(" ")
+                # pausas exactas para el reproductor: nota = 1 celda, " " = 1 celda, "-" = 2 celdas
+                out.append("-" * (gap // 2) + ("." if gap % 2 else ""))
             if last // per_line != s // per_line: out.append("\n")
         ks = "".join(KEY[n] for n in sorted(slots[s]) if n in KEY)
         out.append(f"[{ks}]" if len(ks) > 1 else ks)
         last = s
     txt = "".join(out)
     import re
-    txt = re.sub(r"[ ]*\n[ ]*", "\n", txt).strip()
+    txt = txt.strip()
+    print(f"# tempo del reproductor: {60e6/tempo*a.grid/2:.0f} bpm (cada celda = 1/{a.grid} de pulso = media pulsación del reproductor)", file=sys.stderr)
     print(txt)
 
 if __name__ == "__main__": main()
