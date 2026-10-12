@@ -21,6 +21,9 @@ ap.add_argument("--kb", default="auto", help="franja del teclado ya0-ya1 (p.ej. 
 ap.add_argument("--bpm", default="auto")
 ap.add_argument("--intro", type=float, default=5.0, help="segundos iniciales en que se completa con una franja baja (y 300-340), por si un destello de intro tapa la franja alta")
 ap.add_argument("--thr", type=float, default=0, help="umbral de ancho de barra (px) negra/blanca; 0 = (ancho negra + ancho blanca)/2 del teclado. OJO: Synthesia dibuja las barras más estrechas que las teclas (blanca ≈16px, negra ≈14px con teclas de 23/15px): mide los anchos reales de las barras y pásalo a mano")
+ap.add_argument("--merge", type=int, default=0, help="unir tramos separados por menos de N px (barras con letra dentro que parten la columna)")
+ap.add_argument("--end", type=float, default=0, help="leer solo hasta este segundo (0 = todo)")
+ap.add_argument("--bycenter", action="store_true", help="clasificar por el centro de la barra (tecla cuyo centro quede más cerca, blancas y negras), ignorando el ancho; para videos con barras redondeadas o centradas en la tecla")
 ap.add_argument("--debug", action="store_true")
 a = ap.parse_args()
 
@@ -65,8 +68,12 @@ blacks = list(zip(bmidi, blacks))
 bw = np.median([q - p for p, q in segs]); THR = a.thr or (bw + ww) / 2   # umbral de ancho negra/blanca
 print(f"# ancho negra {bw:.0f}px, umbral {THR:.0f}px", file=sys.stderr)
 
+ALLK = sorted([(x, m) for m, x in whites] + [(x, m) for m, x in blacks])
 def classify(p, q):
     w = q - p; c = (p + q) / 2
+    if a.bycenter:
+        x, m = min(ALLK, key=lambda k: abs(k[0] - c))
+        return m if abs(x - c) < ww * 0.35 else None
     if w < THR:
         m, bx = min(blacks, key=lambda b: abs(b[1] - c))
         return m if abs(bx - c) < ww * 0.6 else None
@@ -80,7 +87,7 @@ def read_strip(y0, y1):
     state = {}; notes = []; fi = 0; t = 0.0
     while True:
         ok = cap.grab()
-        if not ok: break
+        if not ok or (a.end and fi / fps > a.end): break
         if fi % a.step == 0:
             ok, f = cap.retrieve(); hsv = cv2.cvtColor(f[y0:y1, :, :], cv2.COLOR_BGR2HSV)
             colored = (hsv[:, :, 0] >= h0) & (hsv[:, :, 0] <= h1) & (hsv[:, :, 1] >= a.sat) & (hsv[:, :, 2] >= a.val)
@@ -91,6 +98,12 @@ def read_strip(y0, y1):
                 if v and s is None: s = x
                 if not v and s is not None: runs.append((s, x)); s = None
             if s is not None: runs.append((s, W))
+            if a.merge:
+                mg = []
+                for r in runs:
+                    if mg and r[0] - mg[-1][1] < a.merge: mg[-1] = (mg[-1][0], r[1])
+                    else: mg.append(r)
+                runs = mg
             runs = [r for r in runs if r[1] - r[0] >= 6]
             ons = set()
             if len(runs) <= a.maxbars:

@@ -1,33 +1,65 @@
-[6p] y [6u] p [6y] u [6p] y [6u] p [6y] u
-[6p] y [6u] p [6y] u [6p] y [6u] p [6y] u [4o] t [4y] o [4t] y [4o] t [4y] o [4t] y
-[3o] t [3y] o [3t] y [3o] t [3y] o [3t] y [4p] y [4u] p [4y] u [4p] y [4u] p [4y] u
-[6p] y [6u] p [6y] u [6p] y [6u] p [6y] u [4o] t [4y] o [4t] y [4o] t [4y] o [4t] y
-[3o] t [3y] o [3t] y [3o] t [3y] o [3t] y [2i] E [2t] i [2E] t [2i] E [2t] i [2E] t
-[5i] r [5t] i [5r] t [5o] r [5t] o [5r] t [5i] r [5t] i [5r] t o t y u i o
-[6p] y [6u] p [6y] u [6p] y [6u] p [6y] u [4o] t [4y] o [4t] y [4o] t [4y] o [4t] y
-[3o] t [3y] o [3t] y [3o] t [3y] o [3t] y [4p] y [4u] p [4y] u [4p] y [4u] p [4y] u
-[6p] y [6u] p [6y] u [6p] y [6u] p [6y] u [4o] t [4y] o [4t] y [4o] t [4y] o [4t] y
-[3o] t [3y] o [3t] y [3o] t [3y] o [3t] y [4p] y [4u] p [4y] u [4p] y [4u] p [4y] u
-[6p] y [6u] p [6y] u [6p] y [6u] p [6y] u [4o] t [4y] o [4t] y [4o] t [4y] o [4t] y
-[3o] t [3y] o [3t] y [3o] t [3y] o [3t] y pTyIuTpIyTuIpTyIuTpIyTuI
-ptyiutpiytuiptyiutpiytuipryIurpIyruIpEyiuEpiyEui
-ptyiutpiytuiptyiutpiytuipTyIuTpIyTuIpTyIuTpIyTuI
-ptyiutpiytuiptyiutpiytuipryIurpIyruIpEyiuEpiyEui
-ptyiutpiytuiptyiutpiytui[6p] y [6u] p [6y] u [6p] y [6u] p [6y] u
-[4o] t [4y] o [4t] y [4o] t [4y] o [4t] y [3o] t [3y] o [3t] y [3oh] [ts] [3yd] [oh] [3ts] [yd]
-[4pj] [yd] [4uf] [pj] [4yd] [uf] [4pj] [yd] [4uf] [pj] [4yd] [uf] [6pj] [yd] [6uf] [pj] [6yd] [uf] [6pj] [yd] [6uf] [pj] [6yd] [uf]
-[4oh] [ts] [4yd] [oh] [4ts] [yd] [4oh] [ts] [4yd] [oh] [4ts] [yd] [3oh] [ts] [3yd] [oh] [3ts] [yd] [3oh] [ts] [3yd] [oh] [3ts] [yd]
-[4pj] [yd] [4uf] [pj] [4yd] [uf] [4pj] [yd] [4uf] [pj] [4yd] [uf] [6pj] [yd] [6uf] [pj] [6yd] [uf] [6pj] [yd] [6uf] [pj] [6yd] [uf]
-[4oh] [ts] [4yd] [oh] [4ts] [yd] [4oh] [ts] [4yd] [oh] [4ts] [yd] [3oh] [ts] [3yd] [oh] [3ts] [yd] [3oh] [ts] [3yd] [oh] [3ts] [yd]
-pTyIuTpIyTuIpTyIuTpIyTuIptyiutpiytuiptyiutpiytui
-pryIurpIyruIpEyiuEpiyEuiptyiutpiytuiptyiutpiytui
-[pj][TS][yd][IG][uf][TS][pj][IG][yd][TS][uf][IG][pj][TS][yd][IG][uf][TS][pj][IG][yd][TS][uf][IG][pj][ts][yd][ig][uf][ts][pj][ig][yd][ts][uf][ig][pj][ts][yd][ig][uf][ts][pj][ig][yd][ts][uf][ig]
-[pj][ra][yd][IG][uf][ra][pj][IG][yd][ra][uf][IG][pj][EP][yd][ig][uf][EP][pj][ig][yd][EP][uf][ig][pj][ts][yd][ig][uf][ts][pj][ig][yd][ts][uf][ig][pj][ts][yd][ig][uf][ts][pj][ig][yd][ts][uf][ig]
-[pj][TS][yd][IG][uf][TS][pj][IG][yd][TS][uf][IG][pj][TS][yd][IG][uf][TS][pj][IG][yd][TS][uf][IG][pj][ts][yd][ig][uf][ts][pj][ig][yd][ts][uf][ig][pj][ts][yd][ig][uf][ts][pj][ig][yd][ts][uf][ig]
-[pj][ra][yd][IG][uf][ra][pj][IG][yd][ra][uf][IG][pj][EP][yd][ig][uf][EP][pj][ig][yd][EP][uf][ig][pj][ts][yd][ig][uf][ts][pj][ig][yd][ts][uf][ig][pj][ts][yd][ig][uf][ts][pj][ig][yd][ts][uf][ig]
-[pj][TS][yd][IG][uf][TS][pj][IG][yd][TS][uf][IG][pj][TS][yd][IG][uf][TS][pj][IG][yd][TS][uf][IG][pj][ts][yd][ig][uf][ts][pj][ig][yd][ts][uf][ig][pj][ts][yd][ig][uf][ts][pj][ig][yd][ts][uf][ig]
-[pj][ra][yd][IG][uf][ra][pj][IG][yd][ra][uf][IG][pj][EP][yd][ig][uf][EP][pj][ig][yd][EP][uf][ig][pj][ts][yd][ig][uf][ts][pj][ig][yd][ts][uf][ig][pj][ts][yd][ig][uf][ts][pj][ig][yd][ts][uf][ig]
-[pj][TS][yd][IG][uf][TS][pj][IG][yd][TS][uf][IG][pj][TS][yd][IG][uf][TS][pj][IG][yd][TS][uf][IG][pj][ts][yd][ig][uf][ts][pj][ig][yd][ts][uf][ig][pj][ts][yd][ig][uf][ts][pj][ig][yd][ts][uf][ig]
-[pj][ra][yd][IG][uf][ra][pj][IG][yd][ra][uf][IG][pj][EP][yd][ig][uf][EP][pj][ig][yd][EP][uf][ig][pj][ts][yd][ig][uf][ts][pj][ig][yd][ts][uf][ig][pj][ts][yd][ig][uf][ts][pj][ig][yd][ts][uf][ig]
-p y u p y u p y u p y u o t y o t y o t y o t y
-o t y o t y o t y o t y p y u p y u p y u p y u
+[48p]-.y.[48].u-.[48p]-.y.[48].u-.[48p]-.y.[48].u-.[48p]-.y.[48].u-.
+[60p]-.y.[60].u-.[60p]-.y.[60].u-.[60p]-.y.[60].u-.[60p]-.y.[60].u-.
+[48o]-.t.[48].y-.[48o]-.t.[48].y-.[48o]-.t.[48].y-.[48o]-.t.[48].Ty-
+[38o]-.t.[38].y-.[38o]-.t.[38].y-.[38o]-.t.[38].y-.[38o]-.t.[38].y-.
+[48p]-.y.[48].u-.[48p]-.y.[48].u-.[48p]-.y.[48].u-.[48p]-.y.[48].u-.
+[60p]-.y.[60].u-.[60p]-.y.[60].u-.[60p]-.y.[60].u-.[60p]-.y.[60].u-.
+[48o]-.t.[48].y-.[48o]-.t.[48].y-.[48o]-.t.[48].y-.[48o]-.t.[48].Ty-
+[38o]-.t.[38].y-.[38o]-.t.[38].y-.[38o]-.t.[38].y-.[38o]-.t.[38].y-.
+[2i]^-.E2^t-.[2i]^-.E2^t-.[2i]^-.E2^t-.[2^i]^-.E2^t-.
+[59i]-.r.[59].t-.[59i]-.r.[59].t-.[59o]-.r.[59].t-.[59o]-.r.[59].t-.
+[59i]-.r.[59].t-.[59i]-.r.[59].t-.[59o]-.t-.y-.u-.i-.o-.
+[6es]-.9-.0-.[6es]-.9-.0-.[6e]-.9-.0-.[6e]-.9-.0.s.
+[4wS]d-[8s].a.9.s.[4w]-.8-.9-.[4w]-.8-.9-.[4w]-.8-.9.s.
+[38wS]d-[8s].a.9.a.[38w]-.8-.9-.[38wp]-.8-.9-.[38w]-.8-.9-.
+[48ep]-.9-.0-.[48e]-.9-.0-.[48e]-.9-.0-.[48e]-.9-.0-.
+[6eus]-.9-.0-.[6eus]-.9-.0-.[6e]-.9-.0-.[6e]-.9-.0.s.
+[4wS]d-[8s].a.9.s.[4w]-.8-.9-.[4w]-.8-.9-.[4w]-.8-.9.s.
+[38wS]d-[8s].a.9.a.[38w]-.8-.9-.[38wp]-.8-.9-.[38w]-.8-.9-.
+[48ep]-.9-.0-.[48e]-.9-.0-.[48e]-.9-.0-.[48e]-.9-.[0p].p.
+[6eus]-.9-.0-.[6eus]-.9-.0-.[6e]-.9-.0-.[6e]-.9-.0-.
+[4wd]-.[8s].a.9.s.[4w]-.8-.9-.[4w]-.8-.9-.[4w]-.8-.9-.
+[38wd]-.[8s].a.9.a.[38w]-.8-.9-.[38wP]p-8-.9-.[38w]-.8-.9-.
+p-Tu-Iu-.p-Iy.T.u-.p.TTu-Iu-.p-Iy-Tu-.
+p.t.y.i.u.t.p.i.y.t.u.i.p.t.y.i.u.t.p.i.y.t.u.i.
+p.r.y-Iu.r.p-Iy.r.u-.p-Ey.i.u-.p.i.y-Eu.i.
+p.t.y.i.u.t.p.i.y.t.u.i.p.t.y.i.u.t.p.i.y.t.u.i.
+[6p].T.u.6Iu-.[6p]-Iy.6Tu-.[6p].TTu.6Iu.T.[6p]-Iy.[6T].u-.
+[6p].t.y.[6i].u.t.[6p].i.y.[6t].u.i.[6p].t.y.[6i].u.t.[6p].i.y.[6t].u.i.
+[6p].r.y.6Iu.r.[6p]-Iy.[6r].u-.p^.Ey.i^u-.[^p]^i.y-[^E]u.i.
+[4p].t.y.[4i].u.t.[4p].i.y.[4t].u.i.[4p].t.y.[4i].u.t.[4p].i.y.[4t].u.i.
+[6eus]-.9-.0-.[6eus]-.9-.0-.[6e]-.9-.0-.[6e]-.9-.0-.
+[4wid]-.[8us].[ya].9.[us].[4w]-.8-.9-.[4w]-.8-.9-.[4w]-.8-.9-.
+[38wid]-.[8us].[ya].9.[ya].[38w]-.8-.9-.[38wtp]-.8-.9-.[38w]-.8-.9-.
+[48e]-.9-.0-.[48e]-.9-.0-.[48e]-.9-.0-.[48e]-.9-.0-.
+[6eus]-.9-.0-.[6eus]-.9-.0-.[6e]-.9-.0-.[6e]-.9-.[0us]-.
+[4wid]-.[8us]-.[9us]-.[4w]-.8-.9-.[4w]-.8-.9-.[4w]-.8-.[9us].[us].
+[38wid]-.[8us].[ya].9.[ya].[38w]-.8-.9-.[38wtp]-.8-.9-.[38w]-.8-.9-.
+[48pj]-.d.[48].f-.[48pj]-.d.[48].f-.[48pj]-.d.[48].f-.[59pj]-.d.[59].f-.
+[6eus]-.9-.0-.[6eus]-.9-.0-.[6e]-.9-.0-.[6e]-.9-.[0us]-.
+[4wid]-.[8us].[ya].9.[us].[4w]-.8-.9-.[4w]-.8-.9-.[4w]-.8-.9.[us].
+[38wiS]d-[8us].[ya].9.[ya].[38w]-.8.[tp].9-.[38w]-.8-.9-.[38w]-.8-.9-.
+[6ep]-Tu-Iu-.p-Iy.T.u-.p.TTu-Iu-.p-Iy-Tu-.
+p.t.y.i.u.t.p.i.y.t.u.i.p.t.y.i.u.t.p.i.y.t.u.i.
+p.r.y-Iu.r.p-Iy.r.u-.p-Ey.i.u-.p.i.y-Eu.i.
+[8p].t.y.[8i].u.t.[8p].i.y.[8t].u.i.[8p].t.y.[8i].u.t.[8p].i.y.[8t].u.i.
+[6p].TTu.6Iu.T.[6p]-Iy.6Tu-.[6p].T.u.6Iu.T.[6p]-Iy.[6T]Tu-.
+[6p].t.y.[6i].u.t.[6p].i.y.[6t].u.i.[6p].t.y.[6i].u.t.[6p].i.y.[6t].u.i.
+[6p].r.y.6Iu.r.[6p]-Iy.[6r].u-.p^.Ey.i^u-.p^i.y-[^E]u.i.
+[18p].t.y.[18i].u.t.[18p].i.y.[18t].u.i.[18p].t.y.[18i].u.t.[18p].i.y.[18t].u.i.
+[6p]-Tu.6Iu.T.[6p]-Iy.6Tu-.[6p]-Tu.6Iu.T.[6p]-Iy.6Tu-.
+[6p].t.y.[6i].u.t.[6p].i.y.[6t].u.i.[6p].t.y.[6i].u.t.[6p].i.y.[6t].u.i.
+[6p].r.y.6Iu.r.[6p]-Iy.[6r].u-.p^.Ey.[^i]^u-.p^i.y-[^E]u.i.
+[18p].t.y.[18i].u.t.[18p].i.y.[18t].u.i.[18p].t.y.[18i].u.t.[18p].i.y.[18t].u.i.
+[6p].T.u.6Iu-.[6p]-Iy.6Tu-.[6p]-Tu.6Iu.T.[6p]-Iy.6Tu-.
+[6p].t.y.[6i].u.t.[6p].i.y.[6t].u.i.[6p].t.y.[6i].u.t.[6p].i.y.[6t].u.i.
+[29p]-.y.[29].u-.[29p]-.y.[29].u-.p^-y-^u-.p^-y-^u-.
+[4p].t.y.[4i].u.t.[4p].i.y.[4t].u.i.[4p].t.y.[4i].u.t.[4p].i.y.[4t].u.i.
+[6p]-Tu.6Iu.T.[6p]-Iy.[6T].u-.[6p]-Tu.6Iu.T.[6p]-Iy.6Tu-.
+[4p].t.y.[4i].u.t.[4p].i.y.[4t].u.i.[4p].t.y.[4i].u.t.[4p].i.y.[4t].u.i.
+[29p].r.y.[29]Iu.r.[29p]-Iy.[29r].u-.p^.Ey.i^u-.p^i.y-[^E]u.i.
+[4p].t.y.[4i].u.t.[4p].i.y.[4t].u.i.[4p].t.y.[4i].u.t.[4p].i.y.[4t].u.i.
+[60p]-.y.[60].u-.[60p]-.y.[60].u-.[60p]-.y.[60].u-.[60p]-.y.[60].u-.
+[48o]-.t.[48].y-.[48o]-.t.[48].y-.[48o]-.t.[48].y-.[48o]-.t.[48].y-.
+[38o]-.t.[38].y-.[38o]-.t.[38].y-.[38o]-.t.[38].y-.[38o]-.t.[38].y-.
+[48p]-.y.[48].u-.[48p]-.y.[48].u-.[48p]-.y-.u-.p-.y-.u
