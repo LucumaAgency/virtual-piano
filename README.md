@@ -34,3 +34,8 @@ Daydreaming (Radiohead, Synthesia 1080p con letras dentro de las barras y partí
 ## Publicación
 Está publicado en Lucuma Previews como `lucuma/piano-virtual`. Subir una versión nueva:
 `node ../previews/push.js lucuma piano-virtual . --nota "..."` (push.js ignora README, .py y .mid).
+
+## Pendiente: Daydreaming, pasajes con C#/F# (2026-10-12)
+El usuario oye mal las líneas 23, 25, 27, 29, 42, 44, 46, 48, 50, 52, 54, 56, 58 y 60 de `songs/daydreaming.txt` (las que llevan `T`, `I`, `E`, `^` y guiones, p. ej. `p-Tu-Iu-.p-Iy.T.u-.`) y espera ahí el patrón blanco `p.t.y.i.u.t.p.i.y.t.u.i.` (o `[6p].t.y.[6i].u.t.[6p].i.y.[6t].u.i.`).
+Verificado: la lectura es fiel al video. Las barras llevan etiqueta "Db"/"F#" en esos compases y el audio del mp4 (extraído con el ffmpeg de imageio, energía en fundamentales) confirma C#4/F#4 dominantes y C4/F4 casi ausentes (línea 23: C#4 74,9 vs C4 2,0; F#4 54,3 vs F4 3,2), al revés que en los pasajes buenos. El pianista cambia la figura (A sostenida, F# de adorno, D, C#, E).
+Decisión pendiente: (1) dejar fiel al video (estado actual, Previews v17) o (2) uniformar esas líneas con el patrón blanco a mano; para las líneas tipo `p.r.y-Iu.r` (con B3) y la 56 (bajo D2/E2) falta definir el patrón. Nota: el reproductor no tiene duraciones, cada nota suena un instante, así que las notas sostenidas con pausas detrás se oyen entrecortadas.
