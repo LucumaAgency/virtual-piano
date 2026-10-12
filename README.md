@@ -29,7 +29,7 @@ Las partituras viven en `songs/<slug>.txt`; cada una necesita su `<option value=
 - Tempo por la moda de los intervalos entre ataques (tomado como corchea). Como el video es una interpretación con rubato, convertir luego con `midi2vp.py <mid> --grid 2` (sin `--auto`, para conservar las notas del video). Las alturas son absolutas; si se prefiere una octava arriba, `--transpose 12`.
 - Escribe imágenes de depuración en `video-work/` (ignorada por git).
 
-Ejemplo: Save Room de Code Veronica → `songs/re-code-veronica-video.mid` (466 notas, 81 bpm) → `songs/re-code-veronica-video.txt`. Los videos fuente (mp4) no van en el repo.
+Ejemplo: "A Moment of Relief" (Code Veronica, video Synthesia de 88 teclas, 80 bpm) → `video2midi.py video.mp4 songs/re-code-veronica-video.mid --hue 30-130 --intro 0 --bpm 80 --kb 585-650 --minframes 2` (262 notas; azul = mano derecha, verde = izquierda; el teclado ocupa y 570-715 así que la calibración automática falla y se pasa `--kb`) → `midi2vp.py ... --grid auto`. Los videos fuente (mp4) no van en el repo.
 
 ## Publicación
 Está publicado en Lucuma Previews como `lucuma/piano-virtual`. Subir una versión nueva:
