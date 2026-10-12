@@ -1,0 +1,33 @@
+[6tup] y [6u] p [6y] u [6p] y [6u] p [6y] u
+[6p] y [6u] p [6y] u [6p] y [6u] p [6y] u [4o] t [4y] o [4t] y [4o] t [4y] o [4t] y
+[3o] t [3y] o [3t] y [3o] t [3y] o [3t] y [4p] y [4u] p [4y] u [4p] y [4u] p [4y] u
+[6p] y [6u] p [6y] u [6p] y [6u] p [6y] u [4o] t [4y] o [4t] y [4o] t [4y] o [4t] y
+[3o] t [3y] o [3t] y [3o] t [3y] o [3t] y [2i] E [2t] i [2E] t [2i] E [2t] i [2E] t
+[5rti] r [5t] i [5r] t [5o] r [5t] o [5r] t [5rti] r [5t] i [5r] t o t y u i o
+[6tup] y [6u] [tp] [6y] u [6p] y [6u] p [6y] [tu] [4yo] trt [4ty] o [4t] y [4o] t [4y] o [4t] [ty]
+[3yo] t [3ry] o [3t] y [3eo] t [3y] o [3t] y [4ep] y [4u] p [4y] u [4p] y [4u] p [4y] u
+[6tp] y [6u] [tp] [6y] u [6p] y [6u] p [6y] [tu] [4yo] trt [4ty] o [4t] y [4o] t [4y] o [4t] [ty]
+[3yo] t [3ry] o [3t] y [3eo] t [3y] o [3t] y [4ep] y [4u] p [4y] u [4p] y [4u] p [4y] [eu]
+[6tp] y [6u] [tp] [6y] u [6p] y [6u] p [6y] u [4yo] trt [4ty] o [4t] y [4o] t [4y] o [4t] y
+[3yo] t [3ry] o [3t] y [3eo] t [3y] o [3t] y [eTupf] T y I [uG] T [pf] I y T [uG] I [pf] T y I [uG] T [pf] I y T [uG] I
+[tupj] t y i [uf] t [pj] i y t [uf] i [pj] t y i [uf] t [pj] i y t [uf] i [pf] r y I [uG] r [pf] I y r [uG] I [pf] E y i [ug] E [pf] i y E [ug] i
+[Tupf] t y i u t p i y t u i p t y i u t p i y t u i [tpsf] T y I u T p I y T u I p T y I u T p I y T u I
+p t y i u t p i y t u i p t y i u t p i y t u i p r y I u r p I y r u I p E y i u E p i y E u i
+p t y i u t p i y t u i p t y i u t p i y t u i [6tup] y [6u] [tp] [6y] u [6p] y [6u] p [6y] [tu]
+[4yo] trt [4ty] o [4t] y [4o] t [4y] o [4t] [ty] [3yo] t [3ry] o [3t] y [3eoh] [ts] [3yd] [oh] [3ts] [yd]
+[4pj] [yd] [4uf] [pj] [4yd] [uf] [4pj] [yd] [4uf] [pj] [4yd] [uf] [6tupj] [yd] [6uf] [tpj] [6yd] [uf] [6pj] [yd] [6uf] [pj] [6yd] [tuf]
+[4yoh] tr[ts] [4tyd] [oh] [4ts] [yd] [4oh] [ts] [4yd] [oh] [4ts] [tyd] [3yoh] [ts] [3ryd] [oh] [3ts] [yd] [3eoh] [ts] [3yd] [oh] [3ts] [yd]
+[4epj] [yd] [4uf] [pj] [4yd] [uf] [4pj] [yd] [4uf] [pj] [4yd] [uf] [6tupj] [yd] [6uf] [tpj] [6yd] [uf] [6pj] [yd] [6uf] [pj] [6yd] [tuf]
+[4yoh] tr[ts] [4tyd] [oh] [4ts] [yd] [4oh] [ts] [4yd] [oh] [4ts] [tyd] [3yoh] [ts] [3ryd] [oh] [3ts] [yd] [3eoh] [ts] [3yd] [oh] [3ts] [yd]
+[eTupf] T y I [uG] T [pf] I y T [uG] I [pf] T y I [uG] T [pf] I y T [uG] I [tupj] t y i [uf] t [pj] i y t [uf] i [pj] t y i [uf] t [pj] i y t [uf] i
+[pf] r y I [uG] r [pf] I y r [uG] I [pf] E y i [ug] E [pf] i y E [ug] i [Tupf] t y i u t p i y t u i p t y i u t p i y t u i
+[pSfj] [TS] [yd] [IG] [uf] [TS] [pj] [IG] [yd] [TS] [uf] [IG] [pj] [TS] [yd] [IG] [uf] [TS] [pj] [IG] [yd] [TS] [uf] [IG] [pj] [ts] [yd] [ig] [uf] [ts] [pj] [ig] [yd] [ts] [uf] [ig] [pj] [ts] [yd] [ig] [uf] [ts] [pj] [ig] [yd] [ts] [uf] [ig]
+[pjx] [ra] [yd] [IG] [uf] [ra] [pj] [IG] [yd] [ra] [uf] [IG] [pj] [EP] [yd] [ig] [uf] [EP] [pj] [ig] [yd] [EP] [uf] [ig] [pj] [ts] [yd] [ig] [uf] [ts] [pj] [ig] [yd] [ts] [uf] [ig] [pj] [ts] [yd] [ig] [uf] [ts] [pj] [ig] [yd] [ts] [uf] [ig]
+[pSfjx] [TS] [yd] [IG] [uf] [TS] [pj] [IG] [yd] [TS] [uf] [IG] [pj] [TS] [yd] [IG] [uf] [TS] [pj] [IG] [yd] [TS] [uf] [IG] [pj] [ts] [yd] [ig] [uf] [ts] [pj] [ig] [yd] [ts] [uf] [ig] [pj] [ts] [yd] [ig] [uf] [ts] [pj] [ig] [yd] [ts] [uf] [ig]
+[pj] [ra] [yd] [IG] [uf] [ra] [pj] [IG] [yd] [ra] [uf] [IG] [pj] [EP] [yd] [ig] [uf] [EP] [pj] [ig] [yd] [EP] [uf] [ig] [pj] [ts] [yd] [ig] [uf] [ts] [pj] [ig] [yd] [ts] [uf] [ig] [pj] [ts] [yd] [ig] [uf] [ts] [pj] [ig] [yd] [ts] [uf] [ig]
+[pj] [TS] [yd] [IG] [uf] [TS] [pj] [IG] [yd] [TS] [uf] [IG] [tpj] [TS] [yd] [IG] [uf]y[TS] [upj] [IG] [yd] [TyS] [uf]u[IG] [pj] [ts] [yd] [ig] [uf] [ts] [tpj] [ig] [yd] [ts] [uf]y[ig] [upj] [ts]y[yd] [ig] [uf] [ts] [ypj] [ig] [yd] [ts] [uf] [ig]
+[pj] [ra] [yd] [IG] [uf] [ra] [tpj] [IG] [yd] [ra] [uf]y[IG] [upj] [EP] [yd] [yig] [uf]u[EP] [pj] [ig] [yd] [EP] [uf] [ig] [ypj] [ts] [yd] [ig] [uf]t[ts] [upj] [ig] [yd] [ts] [uf] [ig] [pj] [ts] [yd] [ig] [uf] [ts] [pj] [ig] [yd] [ts] [uf] [ig]
+[pj] [TS] [yd] [IG] [uf] [TS] [pj] [IG] [yd] [TS] [uf] [IG] [tpj] [TS] [yd] [IG] [uf]y[TS] [upj] [IG] [yd] [TyS] [uf]u[IG] [pj] [ts] [yd] [ig] [uf] [ts] [tpj] [ig] [yd] [ts] [uf]y[ig] [upj] [ts]y[yd] [ig] [uf] [ts] [ypj] [ig] [yd] [ts] [uf] [ig]
+[pj] [ra] [yd] [IG] [uf] [ra] [tpj] [IG] [yd] [ra] [uf]y[IG] [upj] [EP] [yd] [yig] [uf]u[EP] [pj] [ig] [yd] [EP] [uf] [ig] [pj] [ts] [yd] [ig] [uf] [ts] [pj] [ig] [yd] [ts] [uf] [ig] [pj] [ts] [yd] [ig] [uf] [ts] [pj] [ig] [yd] [ts] [uf] [ig]
+[pk] y u p y u p y u p y u o t y o t y [oj] t y o t y
+o t y o t y o t y o t y p y u p y u p y u p y u

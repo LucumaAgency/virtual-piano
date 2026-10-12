@@ -1,0 +1,7 @@
+*.mp4
+*.mov
+*.mkv
+__pycache__/
+video-work/
+trabajo/
+.DS_Store

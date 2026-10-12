@@ -1,0 +1,67 @@
+6 [0etu] - [0etu] -
+[0etu] - [0etu] 6 [0etu] - [0etu] -
+[0etu] 6 [0eru] 6 [0eyu] 6 [0etu] - [0etu] -
+[0etu] - [0etu] 6 [0etu] - [0etu]
+6 [0etu] 6 [0eru] 6 [0eyu] 6 [0etu] - [0etu]
+6 [0etu] - 6 [0etu] 6 [0etu] - [0etu]
+6 [0etu] - 6 [0etu] [60] [0etu] - 6 [0etu]
+6 [0etu] q 6 [0etu] [30] [70Wr] - 3 [70Wr]
+3 [70Wr] - 3 [70Wr] 0 8 [0wtu] - 8 [90wtu] 8
+8 [0wtu] 0 8 [0wtu] [$0] [9eyu] - [9eyu] 9
+$ [9eyu] - [9eyu] 8 [68] [0etu] - 6 [0etu]
+6 [0etu] 8 [68] [0etu] 7 3 [70Wr] - 3 [70Wr]
+3 [70Wr] 7 3 [70Wr] [67] [0ey] - 6 [0ey] 6
+6 [0ey] - 6 [0ey] [60e] [0eT] - 6 [0eT]
+6 [0eT] - 6 [0eT] [60e] [0etu] - 6 [0etu]
+6 [0etu] q 6 [0etu] [30] [70Wr] - 3 [70Wr]
+3 [70Wr] - 3 [70Wr] 0 8 [0wtu] - 8 [90wtu] 8
+8 [0wtu] 0 8 [0wtu] [$0] [9eyu] - $ [9eyu] 9
+4 [9eyu] - [9eyu] 8 [68] [0etu] - 6 [0etu]
+6 [0etu] 8 6 [70etu] 3 [70Wr] - 3 [70Wr]
+3 [70Wr] - 3 [70Wr] [67] [0ey] - 6 [0ey] 6
+6 [0ey] - 6 [0ey] [60e] [0eT] - 6 [0eT]
+6 [0eT] - 6 [0eT] [5E] [9w] - 5 [9wE]
+[5e] [9w] - 5 [9we] w [5w] [9wE] - 5 [9wE] Q
+$ [9etI] w Q $ [9etI] $ [9etI] - $ [9etI]
+[60] [0etu] - 6 [0etu] 0 6 [0etu] - 6 [0etu]
+6 [0etu] [9q] [0eyi] 8 [0etu] - 8 [0etu]
+8 [0etu] - 8 [0etu] 3 [70eru] - 3 [70eru]
+3 [70eru] - 3 [70eru] [5E] [9w] - 5 [9wE]
+[5e] [9w] - 5 [9we] w [5w] [9wE] - 5 [9wE] Q
+$ [9etI] w Q $ [9etI] $ [9etI] - $ [9etI] 7
+[67] [0etu] - 6 [70etu] 8 6 [0etu] - 6 [0etu]
+6 [0etu] [9q] [0eyi] 8 [0etu] - 8 [0etu]
+8 [0etu] - 8 [0etu] 3 [70eru] - 3 [70eru]
+3 [70eru] - 3 [70eru] [370] [70Wru] - 3 [70Wru]
+3 [70Wru] - 3 [70Wru] [60] [0etu] - 6 [0etu]
+6 [0etu] q 6 [0etu] [30] [70Wr] - 3 [70Wr]
+3 [70Wr] - 3 [70Wr] 0 8 [0wtu] - 8 [90wtu] 8
+8 [0wtu] 0 8 [0wtu] [$0] [9eyu] - $ [9eyu] 9
+$ [9eyu] - [9eyu] [68] [0etu] - 6 [0etu]
+6 [0etu] 8 [68] [0etu] 7 3 [70Wr] - 3 [70Wr]
+3 [70Wr] 7 3 [70Wr] [67] [0ey] - 6 [0ey] 6
+6 [0ey] - 6 [0ey] [60e] [0eT] - 6 [0eT]
+6 [0eT] - 6 [0eT] [6t] [0etu] - 6 [0etu] [60]
+6 6 [60etu] 1 6 [20etu] [7(] [QrY] - 7 [QrY] 7
+7 7 [7QrY] $ 7 [4QrY] Q 3 r [70Wr] 3 3 [70Wr] [39]
+3 3 [370Wr] 5 3 [670Wr] [49] 8 [8qet] - 4 [8qet] 4
+4 4 [48qet] 4 4 [68qet] e [4e] [8qet] - 4 [8qet] [48]
+4 4 [48qet] 5 4 [68qet] [^9] [qEy] - ^ [qEy] ^
+[^q] ^ [^qEy] 1 ^ [2qEy] [30] [70Wr] - 3 [70Wr] 3
+[3W] 3 [370Wr] 3 3 [70Wr] [3y] [70Wr] 3 3 [70Wr]
+[48qetu] [370Wr] [3%] 3 [70Wr] 6 [60etu] 6 [%6] [60etu]
+6 [60etu] 6 [%6] [60etu] 3 [370Wr] 3 [23] [370Wr]
+3 [370Wr] 2 3 3 [70Wr] [18] [10wtu] 8 [78] [80wtu]
+[18] [10wtu] 8 [78] [80wtu] [2$] [29eyu] 2 1 [29eyu]
+[2$] [29eyu] 1 2 [9eyu] 6 [0etu] - 6 [0etu]
+6 [0etu] 6 6 [0etu] 3 [70Wr] - 3 [70Wr]
+3 [70Wr] 3 3 [70Wr] 6 [0ey] - 6 [0ey]
+6 [0ey] 6 6 [0ey] 6 [0eT] - 6 [0eT]
+6 [0eT] 7 6 [10eT] 6 [0etu] - 6 [0etu]
+6 [0etu] - 6 [0etu] 3 [70Wr] - 3 [70Wr]
+3 [70Wr] - 3 [70Wr] 6 [0ey] - 6 [0ey]
+6 [0ey] - 6 [0ey] 6 [0eT] - 6 [0eT]
+6 [0eT] - 6 [0eT] 6 [0etu] - 6 [0etu]
+6 [0etu] - 6 [0etu] 3 [70Wr] - 3 [70Wr]
+3 [70Wr] - 3 [70Wr] 6 [0ey] - 6 [0ey]
+6 [0ey] - 6 [0ey] [60eT]

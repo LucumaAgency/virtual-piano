@@ -1,0 +1,67 @@
+6 [0etu] - [0etu] -
+[0etu] - [0etu] 6 [0etu] - [0etu] -
+[0etu] 6 [0eru] 6 [0eyu] 6 [0etu] - [0etu] -
+[0etu] - [0etu] 6 [0etu] - [0etu]
+6 [0etu] 6 [0eru] 6 [0eyu] 6 [0etu] - [0etu]
+6 [0etu] - 6 [0etu] 6 [0etu] - [0etu]
+6 [0etu] - 6 [0etu] [60] [0etu] - 6 [0etu]
+6 [0etu] q 6 [0etu] [30] [70Wr] - 3 [70Wr]
+3 [70Wr] - 3 [70Wr] 0 8 [0wtu] - 8 [90wtu] 8
+8 [0wtu] 0 8 [0wtu] [$0] [9eyu] - [9eyu] 9
+$ [9eyu] - [9eyu] 8 [68] [0etu] - 6 [0etu]
+6 [0etu] 8 [68] [0etu] 7 3 [70Wr] - 3 [70Wr]
+3 [70Wr] 7 3 [70Wr] [67] [0ey] - 6 [0ey] 6
+6 [0ey] - 6 [0ey] [60e] [0eT] - 6 [0eT]
+6 [0eT] - 6 [0eT] [60e] [0etu] - 6 [0etu]
+6 [0etu] q 6 [0etu] [30] [70Wr] - 3 [70Wr]
+3 [70Wr] - 3 [70Wr] 0 8 [0wtu] - 8 [90wtu] 8
+8 [0wtu] 0 8 [0wtu] [$0] [9eyu] - $ [9eyu] 9
+4 [9eyu] - [9eyu] 8 [68] [0etu] - 6 [0etu]
+6 [0etu] 8 6 [70etu] 3 [70Wr] - 3 [70Wr]
+3 [70Wr] - 3 [70Wr] [67] [0ey] - 6 [0ey] 6
+6 [0ey] - 6 [0ey] [60e] [0eT] - 6 [0eT]
+6 [0eT] - 6 [0eT] [59wEyoP] [9w] - 5 [9wE]
+[5ep] [9w] - 5 [9we] w [5wo] [9wE] - 5 [9wE] Q
+[$9QyIp] [9etI] w Q $ [9etI] [$s] [9etI] d $ [9etI]
+[60etupf] [0etu] - 6 [0etu] 0 [6d] [0etu] - 6 [0etu]
+[6s] [0etu] [$9qyip] [0eyi] [8etup] [0etu] - 8 [0etu]
+8 [0etu] - 8 [0etu] [30rupf] [70eru] - 3 [70eru]
+3 [70eru] - 3 [70eru] [59wEyoP] [9w] - 5 [9wE]
+[5ep] [9w] - 5 [9we] w [5wo] [9wE] - 5 [9wE] Q
+[$9QyIpd] [9etI] w Q $ [9etI] [$s] [9etI] - $ [9etI] 7
+[670etupf] [0etu] - 6 [70etu] 8 6 [0etu] - 6 [0etu]
+6 [0etu] [$9qyip] [0eyi] [8etup] [0etu] - 8 [0etu]
+8 [0etu] - 8 [0etu] [30rupa] [70eru] - 3 [70eru]
+[3d] [70eru] - 3 [70eru] [370ruOf] [70Wru] - 3 [70Wru]
+3 [70Wru] - 3 [70Wru] [60] [0etu] - 6 [0etu]
+6 [0etu] q 6 [0etu] [30] [70Wr] - 3 [70Wr]
+3 [70Wr] - 3 [70Wr] 0 8 [0wtu] - 8 [90wtu] 8
+8 [0wtu] 0 8 [0wtu] [$0] [9eyu] - $ [9eyu] 9
+$ [9eyu] - [9eyu] [68] [0etu] - 6 [0etu]
+6 [0etu] 8 [68] [0etu] 7 3 [70Wr] - 3 [70Wr]
+3 [70Wr] 7 3 [70Wr] [67] [0ey] - 6 [0ey] 6
+6 [0ey] - 6 [0ey] [60e] [0eT] - 6 [0eT]
+6 [0eT] - 6 [0eT] [6tf]fffff[0etuf]fffffffff[6f]f[0etuf]fff[60f]f
+[6j]jjj[6j]j[60etuj]jjjjj[1j]jjj[6j]j[20etuj]jjjjj[7(k]kkkkk[QrYk]kkkkkkkkk[7k]k[QrYk]kkk[7k]k
+[7G]GGG[7G]G[7QrYG]GGGGG[$G]GGG[7G]G[4QrYG]GGG[QG]G[3d]ddd[rd]d[70Wrd]ddddd[3d]ddd[3d]d[70Wrd]ddd[39d]d
+[3H]HHH[3H]H[370WrH]HHHHH[5H]HHH[3H]H[670WrH]HHHHH[49j]jj[8j]jj[8qetj]jjjjjjjjj[4j]j[8qetj]jjj[4j]j
+[4g]ggg[4g]g[48qetg]ggggg[4g]ggg[4g]g[68qetg]ggg[eg]g[4es]sssss[8qets]sssssssss[4s]s[8qets]sss[48s]s
+[4g]ggg[4g]g[48qetg]ggggg[5s]sss[4s]s[68qets]sssss[^9d]ddddd[qEyd]ddddd[dg][dg][dg][dg][^dg][dg][qEydg][dg][dg][dg][^dg][dg]
+[^qJ]JJJ[^J]J[^qEyJ]JJJJJ[1j]jjj[^j]j[2qEyj]jjjjj[30H]HHHHH[70WrH]HHHHHHHHH[3H]H[70WrH]HHH[3H]H
+[3WfH][fH][fH][fH][3fH][fH][370WrfH][fH][fH][fH][fH][fH][3fH][fH][fH][fH][3fH][fH][70WrfH][fH][fH][fH][fH][fH][3yG]GGGGG[70WrG]GGGGG[3G]GGG[3G]G[70WrG]GGGGG
+[48qetuH]HHHHH[370WrH]HHHHH[3%H]HHH[3H]H[70WrH]HHHHH[60etupj]jjjjj[60etuj]jjjjj[6j]jjj[%6j]j[60etuj]jjjjj
+[6j]jjjjj[60etuj]jjjjj[6k]kkk[%6k]k[60etuj]jjjjj[370WruOaH]HHHHH[370WrH]HHHHH[3H]HHH[23H]H[370WrH]HHHHH
+[3H]HHHHH[370WrH]HHH[2H]H[3f]fff[3f]f[70Wrf]fffff[180wtosh]hhhhh[10wtuh]hhhhh[8h]hhh[78h]h[80wtuh]hhhhh
+[18h]hhhhh[10wtuh]hhhhh[8h]hhh[78h]h[80wtuj]jjjjj[2$69tIdh]hhhhh[29eyuh]hhhhh[2h]hhh[1h]h[29eyuh]hhhhh
+[2$ig]ggggg[29eyug]ggg[1g]g[2g]ggggg[9eyug]ggggg[6etuf]fffff[0etuf]fffffffff[6f]f[0etuf]fffff
+[6f]fffff[0etuf]fffff[6f]fff[6f]f[0etuf]fffff[370WruOa]aaaaa[70Wra]aaaaaaaaa[3a]a[70Wra]aaaaa
+[3a]aaaaa[70Wra]aaaaa[3a]aaa[3a]a[70Wra]aaaaa[6eyupd]ddddd[0eyd]ddddddddd[6d]d[0eyd]ddddd
+[6d]ddddd[0eyd]ddddd[6d]ddd[6d]d[0eyd]ddddd[6eTupS]SSSSS[0eTS]SSSSSSSSS[6S]S[0eTS]SSSSS
+[6S]SSSSS[0eTS]SSSSS[7S]SSS[6S]S[10eTS]SSSSS[6etupsl]sssss[0etus]sssssssss[6s]s[0etus]sssss
+[6s]sssss[0etus]sssssssss[6s]s[0etus]sssss[370WruOak]aaaaa[70Wra]aaaaaaaaa[3a]a[70Wra]aaaaa
+[3a]aaaaa[70Wra]aaaaaaaaa[3a]a[70Wra]aaaaa[6eyuOpdz]OOOOO[0eyO]OOOOOOOOO[6O]O[0eyO]OOOOO
+[6O]OOOOO[0eyO]OOOOOOOOO[6O]O[0eyO]OOOOO[6eTupSL]ppppp[0eTp]ppppppppp[6p]p[0eTp]ppppp
+[6p]ppppp[0eTp]ppppppppp[6p]p[0eTp]ppppp[6etupsl] [0etu] - 6 [0etu]
+6 [0etu] - 6 [0etu] 3 [70Wr] - 3 [70Wr]
+3 [70Wr] - 3 [70Wr] 6 [0ey] - 6 [0ey]
+6 [0ey] - 6 [0ey] [60eT]

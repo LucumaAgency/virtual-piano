@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Piano Virtual MVP</title>
+<style>
+:root{--bg:#f6f7fb;--ink:#191a1a;--accent:#174FCA;--hit:#ffd54a;--mute:#8a8f98}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);padding:16px}
+h1{font-size:22px;margin:0 0 4px}
+p.sub{margin:0 0 16px;color:var(--mute);font-size:14px}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}
+button,select{padding:8px 14px;border:1px solid #ccd;border-radius:8px;background:#fff;cursor:pointer;font:inherit}
+button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+label{font-size:13px;color:var(--mute)}
+input[type=range]{width:120px}
+textarea[readonly]{background:#eef0f5;color:var(--mute);cursor:default}
+textarea{width:100%;min-height:90px;font:14px/1.5 ui-monospace,monospace;border:1px solid #ccd;border-radius:8px;padding:10px;resize:vertical}
+#sheet{--lh:34px;font:18px/var(--lh) ui-monospace,monospace;background:#fff;border:1px solid #ccd;border-radius:8px;padding:12px;height:calc(var(--lh) * 5 + 24px);overflow-y:auto;scroll-behavior:smooth;white-space:pre-wrap;word-break:break-all;margin-bottom:12px}
+#sheet .tok.next{outline:2px dashed var(--hit);outline-offset:-1px}
+#sheet .tok{padding:0 2px;border-radius:4px;cursor:pointer}
+#sheet .tok:hover{background:#eef2ff}
+#sheet .tok.done{color:var(--mute)}
+#sheet .tok.cur{background:var(--hit);font-weight:700}
+#piano{position:relative;height:200px;user-select:none;overflow-x:auto}
+#keys{position:relative;height:100%;min-width:900px}
+.key{position:absolute;top:0;border:1px solid #333;border-radius:0 0 5px 5px;cursor:pointer;display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px;font:12px ui-monospace,monospace}
+.key.white{background:#fff;height:100%;z-index:1;color:#555}
+.key.black{background:#222;height:62%;z-index:2;color:#ddd}
+.key.on.white{background:#cfe0ff}
+.key.on.black{background:#4a78d8}
+.key.hint{box-shadow:inset 0 -6px 0 var(--hit)}
+small.help{display:block;margin-top:10px;color:var(--mute);font-size:12px}
+</style>
+</head>
+<body>
+<h1>Piano Virtual (MVP)</h1>
+<p class="sub">61 teclas, mapeo QWERTY compatible con Virtual Piano. Toca con el teclado, carga una partitura en notación de letras y sigue las teclas resaltadas.</p>
+
+<div class="bar">
+  <label>Sonido</label>
+  <select id="wave">
+    <option value="real">Piano real (samples)</option>
+    <option value="piano">Piano sintético</option>
+    <option value="bright">Piano brillante</option>
+    <option value="epiano">Piano eléctrico</option>
+    <option value="harpsi">Clavecín</option>
+    <option value="organ">Órgano</option>
+    <option value="musicbox">Caja de música</option>
+    <option value="bell">Campanas</option>
+    <option value="pad">Cuerdas / pad</option>
+    <option value="sine">Suave</option>
+  </select>
+  <label>Sostenido <input type="checkbox" id="sustain" checked></label>
+  <label>Volumen <input type="range" id="vol" min="0" max="1" step="0.01" value="0.6"></label>
+  <label>Tempo <input type="range" id="tempo" min="60" max="240" value="140"> <span id="bpm">140</span> bpm</label>
+</div>
+
+<div class="bar"><label>Canción</label>
+  <select id="song">
+    <option value="here-to-stay">Here to Stay (Virtual Piano)</option>
+    <option value="o-fly-on">O (Fly On) · Coldplay (desde MIDI, sin negras)</option>
+    <option value="sparks">Sparks · Coldplay (guitarra + bajo)</option>
+    <option value="sparks-completo">Sparks · Coldplay (completo)</option>
+    <option value="atlas">Atlas · Coldplay (piano, 4 pistas)</option>
+    <option value="atlas-completo">Atlas · Coldplay (completo: + cuerdas + celesta)</option>
+    <option value="magic">Magic · Coldplay (melodía + piano + bajo)</option>
+    <option value="magic-completo">Magic · Coldplay (completo)</option>
+    <option value="re-code-veronica-save">Resident Evil Code Veronica · Save Room (piano)</option>
+    <option value="re-code-veronica-save-completo">Resident Evil Code Veronica · Save Room (completo)</option>
+    <option value="re-code-veronica-video">Resident Evil Code Veronica · Save Room (transcrito del video, arreglo completo)</option>
+    <option value="re-secure-place">Resident Evil · "A Secure Place" Save Room (piano)</option>
+    <option value="re-secure-place-completo">Resident Evil · "A Secure Place" Save Room (+ cuerdas)</option>
+    <option value="daydreaming">Daydreaming · Radiohead (piano + teclado, desde MIDI)</option>
+    <option value="subterranean-homesick-alien">Subterranean Homesick Alien · Radiohead (riff + bajo)</option>
+    <option value="subterranean-homesick-alien-completo">Subterranean Homesick Alien · Radiohead (completo: guitarras + teclado + bajo)</option>
+    <option value="exit-music">Exit Music (For a Film) · Radiohead (guitarra + melodía + bajo)</option>
+    <option value="exit-music-completo">Exit Music (For a Film) · Radiohead (completo: + coro + sinte)</option>
+    <option value="daydreaming-completo">Daydreaming · Radiohead (completo: piano + melodía de voz + teclados)</option>
+  </select></div>
+<textarea id="input" spellcheck="false" readonly>[qed8] sa[qpe8] o [wrp9] o[wr9] y 
+[u1] [o5] 9 0 w t y u 
+[qed8] sa[qpe8] o [wrp9] o[wr9] d 
+[f6] 0 r t y r t 0 
+[qed8] sa[qpe8] o [wrp9] o[wr9] y 
+[u1] [o5] 9 0 w t y u 
+[qed8] sa[qpe8] us[wrid9] [id][wr9] [of] 
+[us6] 0 r t y r t 0 
+[qed8] sa[qpe8] o [wrp9] o[wr9] y 
+[u1] [o5] 9 0 w t y u 
+[qed8] sa[qpe8] o [wrp9] o[wr9] d 
+[f6] 0 r t y r t 0 
+[qed8] sa[qpe8] o [wrp9] o[wr9] y 
+[u1] [o5] 9 0 w t y u 
+[qed8] sa[qpe8] us[wrid9] [id][wr9] [of] 
+[us6] 0 r t y r t 0 
+6|p|a|s|
+[i2] 6 0 [qf] t 0 q t 
+5 9 e [rf]g[od]u[se]u[ra]y[po]t 
+[a1] 5 [u9] [o0] r 9 0 r 
+4 8 w [se] [ua] [wp] [oe] [up] 
+[o7] 7 [i9] [fe] y [d9] e [ys] 
+3 [u7] [ua] y [utp] W [ya] 0 
+[us6] 0 r t y r t y 
+6|p|a|s|
+[i2] 6 0 [qf] t 0 q t 
+5 9 e [rf]g[od]u[se]u[ra]y[po]t 
+[a1] 5 [u9] [o0] r 9 0 r 
+4 8 w [se] [ua] [wp] [oe] [up] 
+[o7] 7 [i9] [fe] y [d9] e [ys] 
+3 [u7] [ua] [yu] [utp] W [yraO] 0 
+[us6] 0 r t y r t y 
+6|p|a|s|
+[i2] 6 0 [qf] t 0 q t 
+5 9 e [rf]g[od]u[se]u[ra]y[po]t 
+[a1] 5 [u9] [o0] r 9 0 r 
+4 8 w [se] [ua] [wp] [oe] [up] 
+[o7] 7 [i9] [fe] y [d9] e [ys] 
+3 [u7] [uaW] [yu] [utp] W [yra] 0 
+[us6] 0 r t y r t y 
+6|[pj]|[ka]|[sl]| 
+[ig2] 6 0 [xqf] t 0 q t 
+5 9 e [rf]g[od]u[se]u[ra]y[po][ts] 
+[ka1] 5 [uf9] [oh0] r 9 0 r 
+4 8 w [sle] [uka] [wpj] [ohe] [upj] 
+[oh7] 7 [ig9] [xfe] y [zd9] e [ysl] 
+3 [uf7] [ka] [yd] [tpi30]||o 
+[pi4] 8 w e y o p a [p6]</textarea>
+<div class="bar">
+  <button class="primary" id="play">▶ Reproducir</button>
+  <button id="pause">❚❚ Pausa</button>
+  <button id="stop">■ Detener</button>
+  <button id="prev" title="Línea anterior">⏮ Línea</button>
+  <button id="next" title="Línea siguiente">Línea ⏭</button>
+  <button id="practice">🎹 Modo práctica</button>
+  <button id="edit">✏️ Editar partitura</button>
+  <span id="status" style="color:var(--mute);font-size:13px"></span>
+</div>
+<div id="sheet"></div>
+<div id="piano"><div id="keys"></div></div>
+<small class="help">Haz clic en cualquier nota de la partitura para empezar desde ahí. Teclas: Espacio = reproducir/pausa, flechas ← → = línea anterior/siguiente. </small>
+<small class="help">Pega directamente el HTML de la partitura de virtualpiano.net (se convierte solo). Notación: letras = notas, <code>[abc]</code> = acorde simultáneo, espacio = pausa corta, <code>-</code> = pausa larga, <code>|</code> = compás (solo visual). Mayúsculas y símbolos (!@$%^*( ) = teclas negras. Modo práctica: avanza solo cuando tocas la tecla correcta; en acordes con negras y blancas puedes mantener Shift para todas. Sonido "Piano real": muestras <a href="https://freepats.zenvoid.org/Piano/acoustic-grand-piano.html">Salamander Grand Piano</a> (CC-BY).</small>
+
+<script>
+// ---------- Mapeo de teclas (igual que virtualpiano.net) ----------
+const WHITE = "1234567890qwertyuiopasdfghjklzxcvbnm"; // C2..C7 (36 blancas)
+const SHIFT = {"1":"!","2":"@","3":"#","4":"$","5":"%","6":"^","7":"&","8":"*","9":"(","0":")"};
+const NAMES = ["C","D","E","F","G","A","B"];
+const keyMap = {}; // char -> {midi, name, white, x}
+const keys = [];
+let midi = 36, w = 0; // C2 = MIDI 36
+for (let i = 0; i < WHITE.length; i++) {
+  const ch = WHITE[i], step = i % 7, oct = 2 + Math.floor(i / 7);
+  const name = NAMES[step] + oct;
+  keyMap[ch] = {ch, midi, name, white: true, idx: i};
+  keys.push(keyMap[ch]);
+  const hasSharp = ![2, 6].includes(step) && i < WHITE.length - 1; // sin negra tras E ni B
+  if (hasSharp) {
+    const sc = SHIFT[ch] || ch.toUpperCase();
+    keyMap[sc] = {ch: sc, midi: midi + 1, name: NAMES[step] + "#" + oct, white: false, idx: i};
+    keys.push(keyMap[sc]);
+    midi += 2;
+  } else midi += 1;
+}
+// Variantes de teclado: que shift+dígito en layouts ES también funcione por code
+const freq = m => 440 * Math.pow(2, (m - 69) / 12);
+
+// ---------- Render del piano ----------
+const keysEl = document.getElementById("keys");
+const WW = 25, BW = 16;
+keysEl.style.minWidth = WHITE.length * WW + "px";
+const keyEls = {};
+for (const k of keys) {
+  const el = document.createElement("div");
+  el.className = "key " + (k.white ? "white" : "black");
+  el.textContent = k.ch;
+  el.title = k.name;
+  el.style.width = (k.white ? WW : BW) + "px";
+  el.style.left = (k.white ? k.idx * WW : k.idx * WW + WW - BW / 2) + "px";
+  el.addEventListener("pointerdown", e => { e.preventDefault(); press(k.ch); });
+  el.addEventListener("pointerup", () => release(k.ch));
+  el.addEventListener("pointerleave", () => release(k.ch));
+  keysEl.appendChild(el);
+  keyEls[k.ch] = el;
+}
+
+const inputEl = document.getElementById("input");
+const status = document.getElementById("status");
+
+// ---------- Audio ----------
+let ctx, master;
+function audio() {
+  if (!ctx) { ctx = new (window.AudioContext || window.webkitAudioContext)(); master = ctx.createGain(); master.connect(ctx.destination); }
+  master.gain.value = +document.getElementById("vol").value;
+  if (ctx.state === "suspended") ctx.resume();
+  return ctx;
+}
+// Sampler: Salamander Grand Piano (una muestra cada tercera menor, C2..C7), con pitch-shift al semitono más cercano
+const SAMPLE_NOTES = []; { const names = ["C","Ds","Fs","A"]; for (let o = 2; o <= 6; o++) names.forEach((n, i) => SAMPLE_NOTES.push({ name: n + o, midi: 12 * (o + 1) + i * 3 })); SAMPLE_NOTES.push({ name: "C7", midi: 96 }); }
+const buffers = {}; let samplesLoading = null;
+function loadSamples() {
+  if (samplesLoading) return samplesLoading;
+  const c = audio();
+  status.textContent = "Cargando piano…";
+  samplesLoading = Promise.all(SAMPLE_NOTES.map(n => fetch("samples/" + n.name + ".mp3").then(r => r.arrayBuffer()).then(b => c.decodeAudioData(b)).then(buf => { buffers[n.midi] = buf; })))
+    .then(() => { if (status.textContent === "Cargando piano…") status.textContent = ""; })
+    .catch(err => { console.warn("Samples no disponibles, usando síntesis", err); samplesLoading = null; document.getElementById("wave").value = "piano"; status.textContent = "No se pudieron cargar los samples; usando piano sintético"; });
+  return samplesLoading;
+}
+function nearestSample(midi) { let best = null; for (const n of SAMPLE_NOTES) if (buffers[n.midi] && (!best || Math.abs(n.midi - midi) < Math.abs(best.midi - midi))) best = n; return best; }
+function noteOnSample(k, vel) {
+  const c = audio(), t = c.currentTime, n = nearestSample(k.midi);
+  if (!n) { loadSamples(); return false; }
+  const src = c.createBufferSource(); src.buffer = buffers[n.midi]; src.playbackRate.value = Math.pow(2, (k.midi - n.midi) / 12);
+  const g = c.createGain(); g.gain.value = vel; src.connect(g); g.connect(master); src.start(t);
+  const sustain = document.getElementById("sustain").checked;
+  if (!sustain) { g.gain.setValueAtTime(vel, t + 0.5); g.gain.exponentialRampToValueAtTime(0.0001, t + 1.2); src.stop(t + 1.3); }
+  if (active[k.ch]) active[k.ch].stop();
+  active[k.ch] = { stop() { const now = c.currentTime; g.gain.cancelScheduledValues(now); g.gain.setValueAtTime(g.gain.value, now); g.gain.exponentialRampToValueAtTime(0.0001, now + 0.25); src.stop(now + 0.3); } };
+  return true;
+}
+document.getElementById("wave").addEventListener("change", e => { if (e.target.value === "real") loadSamples(); });
+window.addEventListener("pointerdown", () => { if (document.getElementById("wave").value === "real") loadSamples(); }, { once: true });
+window.addEventListener("keydown", () => { if (document.getElementById("wave").value === "real") loadSamples(); }, { once: true });
+
+const active = {};
+function noteOn(ch, vel = 0.8) {
+  const k = keyMap[ch]; if (!k) return;
+  const type = document.getElementById("wave").value;
+  if (type === "real" && noteOnSample(k, vel)) return;
+  const c = audio(), t = c.currentTime;
+  const g = c.createGain(); g.connect(master);
+  const oscs = [];
+  const mk = (ty, mult, gain) => { const o = c.createOscillator(); o.type = ty; o.frequency.value = freq(k.midi) * mult; const gg = c.createGain(); gg.gain.value = gain; o.connect(gg); gg.connect(g); o.start(t); oscs.push(o); };
+  // Cada timbre: parciales [tipo, múltiplo de frecuencia, ganancia], ataque y duración de caída
+  const P = {
+    piano:    { parts: [["triangle",1,.6],["sine",2,.25],["sine",3,.08],["square",1,.05]], atk: .01, dec: 2.5 },
+    bright:   { parts: [["sawtooth",1,.35],["triangle",2,.3],["sine",3,.15],["sine",4,.08]], atk: .005, dec: 2.2 },
+    epiano:   { parts: [["sine",1,.7],["sine",2,.2],["triangle",3,.05],["sine",0.5,.1]], atk: .005, dec: 1.8 },
+    harpsi:   { parts: [["sawtooth",1,.3],["square",2,.15],["sawtooth",3,.1],["square",4,.06]], atk: .003, dec: 1.2 },
+    organ:    { parts: [["sine",1,.5],["sine",2,.3],["sine",4,.15],["sine",6,.06]], atk: .02, dec: 2.5, hold: true },
+    musicbox: { parts: [["sine",1,.6],["sine",4,.3],["sine",6,.12],["sine",9,.05]], atk: .002, dec: 1.4 },
+    bell:     { parts: [["sine",1,.5],["sine",2.76,.3],["sine",5.4,.2],["sine",8.9,.08]], atk: .002, dec: 3 },
+    pad:      { parts: [["sawtooth",1,.25],["sawtooth",1.004,.25],["triangle",2,.12],["sine",0.5,.15]], atk: .25, dec: 3, hold: true },
+    sine:     { parts: [["sine",1,.8]], atk: .01, dec: 2 },
+  }[type] || { parts: [["sine",1,.8]], atk: .01, dec: 2 };
+  P.parts.forEach(([ty, m, ga]) => mk(ty, m, ga));
+  g.gain.setValueAtTime(0, t);
+  g.gain.linearRampToValueAtTime(vel, t + P.atk);
+  const sustain = document.getElementById("sustain").checked;
+  g.gain.exponentialRampToValueAtTime(0.0001, t + (sustain ? P.dec : Math.min(P.dec, 0.6)));
+  oscs.forEach(o => o.stop(t + 3.5));
+  if (active[ch]) active[ch].stop();
+  active[ch] = { stop() { const n = c.currentTime; g.gain.cancelScheduledValues(n); g.gain.setValueAtTime(g.gain.value, n); g.gain.exponentialRampToValueAtTime(0.0001, n + 0.15); oscs.forEach(o => o.stop(n + 0.2)); } };
+}
+function baseKey(code) { const m = /^Key([A-Z])$/.exec(code); if (m) return m[1].toLowerCase(); const d = /^Digit(\d)$/.exec(code); return d ? d[1] : null; }
+function press(ch, base) {
+  if (!keyMap[ch]) return;
+  // En práctica, acorde mixto (negras + blancas): con Shift pulsado la blanca llega como negra; se acepta la blanca pedida
+  if (practice && pending && base && !pending.has(ch) && pending.has(base)) ch = base;
+  noteOn(ch);
+  keyEls[ch].classList.add("on");
+  if (practice) practiceHit(ch);
+}
+function release(ch) {
+  if (!keyMap[ch]) return;
+  keyEls[ch].classList.remove("on");
+  if (!document.getElementById("sustain").checked && active[ch]) { active[ch].stop(); delete active[ch]; }
+}
+const down = new Set();
+window.addEventListener("keydown", e => {
+  if (e.target.tagName === "TEXTAREA" || e.repeat) return;
+  let ch = e.key;
+  if (e.shiftKey && /^[0-9]$/.test(e.code.replace("Digit", ""))) ch = SHIFT[e.code.replace("Digit", "")] || ch; // layouts no US
+  if (!keyMap[ch]) return;
+  e.preventDefault(); down.add(ch); press(ch, baseKey(e.code));
+});
+window.addEventListener("keyup", e => {
+  for (const ch of [e.key, e.key.toLowerCase(), e.key.toUpperCase(), SHIFT[e.code.replace("Digit", "")]]) if (down.has(ch)) { down.delete(ch); release(ch); }
+});
+
+// Selector de canciones (archivos en songs/*.txt)
+document.getElementById("song").addEventListener("change", async e => {
+  stopAll();
+  try { const r = await fetch("songs/" + e.target.value + ".txt"); if (!r.ok) throw 0; inputEl.value = await r.text(); renderSheet(); }
+  catch { status.textContent = "No se pudo cargar la canción (sirve la página por http)"; }
+});
+
+// Bloqueo de la partitura (evitar ediciones accidentales)
+document.getElementById("edit").addEventListener("click", e => {
+  const ro = inputEl.hasAttribute("readonly");
+  if (ro) { inputEl.removeAttribute("readonly"); inputEl.focus(); e.target.textContent = "🔒 Bloquear partitura"; }
+  else { inputEl.setAttribute("readonly", ""); e.target.textContent = "✏️ Editar partitura"; }
+});
+
+// ---------- Parser de partitura ----------
+// Devuelve tokens: {type:'notes', notes:[..], text} | {type:'rest', beats} | {type:'bar'} | {type:'nl'}
+function parse(src) {
+  const out = []; let i = 0;
+  while (i < src.length) {
+    const c = src[i];
+    if (c === "[") { const j = src.indexOf("]", i); const body = j < 0 ? src.slice(i + 1) : src.slice(i + 1, j); const notes = [...body].filter(x => keyMap[x]); if (notes.length) out.push({ type: "notes", notes, text: "[" + body + "]" }); i = j < 0 ? src.length : j + 1; }
+    else if (keyMap[c]) { out.push({ type: "notes", notes: [c], text: c }); i++; }
+    else if (c === " " || c === ".") { out.push({ type: "rest", beats: 0.5, text: c }); i++; }
+    else if (c === "-") { out.push({ type: "rest", beats: 1, text: "-" }); i++; }
+    else if (c === "|") { out.push({ type: "bar", text: "|" }); i++; }
+    else if (c === "\n") { out.push({ type: "nl", text: "\n" }); i++; }
+    else i++;
+  }
+  return out;
+}
+const sheetEl = document.getElementById("sheet");
+let tokens = [], tokEls = [];
+function renderSheet() {
+  tokens = parse(document.getElementById("input").value);
+  sheetEl.innerHTML = ""; tokEls = [];
+  tokens.forEach((t, n) => {
+    if (t.type === "nl") { sheetEl.appendChild(document.createElement("br")); tokEls.push(null); return; }
+    const s = document.createElement("span"); s.className = "tok"; s.textContent = t.text; s.dataset.n = n; sheetEl.appendChild(s); tokEls.push(s);
+  });
+}
+// Importar el HTML que muestra virtualpiano.net (div#song-pattern): acordes, pausas y saltos
+function fromVirtualPianoHtml(html) {
+  return html
+    .replace(/<br[^>]*>/gi, "\n")
+    .replace(/<span class="pause long">[^<]*<\/span>/gi, " - ")
+    .replace(/<span class="pause">[^<]*<\/span>/gi, " ")
+    .replace(/<[^>]+>/g, "")
+    .trim();
+}
+inputEl.addEventListener("input", () => {
+  if (/<span|song-pattern/i.test(inputEl.value)) inputEl.value = fromVirtualPianoHtml(inputEl.value);
+  stopAll(); renderSheet();
+});
+inputEl.addEventListener("paste", () => setTimeout(() => inputEl.dispatchEvent(new Event("input")), 0));
+renderSheet();
+
+// ---------- Reproducción automática ----------
+let timer = null, practice = false, cursor = 0, playing = false;
+document.getElementById("tempo").addEventListener("input", e => document.getElementById("bpm").textContent = e.target.value);
+function beatMs() { return 60000 / +document.getElementById("tempo").value; }
+function mark(n) {
+  tokEls.forEach((el, i) => { if (!el) return; el.classList.toggle("cur", i === n); el.classList.toggle("done", i < n); });
+  Object.values(keyEls).forEach(el => el.classList.remove("hint"));
+  const t = tokens[n]; if (t && t.type === "notes") t.notes.forEach(ch => keyEls[ch].classList.add("hint"));
+  // marcar la siguiente nota y desplazar: la línea actual queda en la 2ª fila, con 3 líneas visibles por delante
+  tokEls.forEach(el => el && el.classList.remove("next"));
+  let m = n + 1; while (m < tokens.length && tokens[m].type !== "notes") m++;
+  if (tokEls[m]) tokEls[m].classList.add("next");
+  const cur = tokEls[n];
+  if (cur) { const lh = parseFloat(getComputedStyle(sheetEl).getPropertyValue("--lh")); sheetEl.scrollTop = Math.max(0, cur.offsetTop - sheetEl.offsetTop - 12 - lh); }
+  else sheetEl.scrollTop = 0;
+}
+function nextNoteIdx(n) { while (n < tokens.length && tokens[n].type !== "notes") n++; return n; }
+function playFrom(n) {
+  if (n >= tokens.length) { stopAll(); status.textContent = "Fin"; return; }
+  cursor = n; const t = tokens[n]; mark(n);
+  let wait = 0;
+  if (t.type === "notes") { t.notes.forEach(ch => { noteOn(ch); keyEls[ch].classList.add("on"); setTimeout(() => keyEls[ch].classList.remove("on"), 150); }); wait = beatMs() * 0.5; }
+  else if (t.type === "rest") wait = beatMs() * t.beats;
+  timer = setTimeout(() => playFrom(n + 1), wait);
+}
+function pause() {
+  clearTimeout(timer); timer = null;
+  if (playing) { playing = false; status.textContent = "En pausa (▶ para continuar desde aquí)"; }
+}
+function stopAll() { clearTimeout(timer); timer = null; playing = false; practice = false; pending = null; cursor = 0; mark(-1); status.textContent = ""; }
+async function ready() { audio(); if (document.getElementById("wave").value === "real") await loadSamples(); }
+async function play() {
+  await ready(); clearTimeout(timer); practice = false; pending = null; playing = true;
+  status.textContent = "Reproduciendo…"; playFrom(cursor >= tokens.length ? 0 : cursor);
+}
+document.getElementById("play").addEventListener("click", play);
+document.getElementById("pause").addEventListener("click", pause);
+document.getElementById("stop").addEventListener("click", stopAll);
+
+// ---------- Navegar por la partitura (líneas / clic) ----------
+function lineStart(n) { let i = Math.min(n, tokens.length - 1); while (i > 0 && tokens[i - 1].type !== "nl") i--; return i; }
+function seek(n) {
+  n = nextNoteIdx(Math.max(0, Math.min(n, tokens.length - 1))); pending = null;
+  if (n >= tokens.length) return;
+  clearTimeout(timer); cursor = n; mark(n);
+  if (playing) playFrom(n);
+  else status.textContent = practice ? "Práctica: toca las teclas resaltadas" : "Posición marcada (▶ o Modo práctica para empezar aquí)";
+}
+function prevLine() { const s = lineStart(cursor); seek(nextNoteIdx(s) < cursor ? s : lineStart(Math.max(0, s - 2))); }
+function nextLine() { let i = cursor; while (i < tokens.length && tokens[i].type !== "nl") i++; if (i < tokens.length) seek(i + 1); }
+document.getElementById("prev").addEventListener("click", prevLine);
+document.getElementById("next").addEventListener("click", nextLine);
+sheetEl.addEventListener("click", e => { const el = e.target.closest(".tok"); if (el) seek(+el.dataset.n); });
+window.addEventListener("keydown", e => {
+  if (e.target.tagName === "TEXTAREA" || e.target.tagName === "SELECT") return;
+  if (e.code === "Space") { e.preventDefault(); playing ? pause() : play(); }
+  else if (e.code === "ArrowLeft") { e.preventDefault(); prevLine(); }
+  else if (e.code === "ArrowRight") { e.preventDefault(); nextLine(); }
+});
+
+// ---------- Modo práctica ----------
+document.getElementById("practice").addEventListener("click", async () => {
+  await ready(); clearTimeout(timer); timer = null; playing = false; practice = true; pending = null;
+  cursor = nextNoteIdx(cursor >= tokens.length ? 0 : cursor); mark(cursor);
+  status.textContent = "Práctica: toca las teclas resaltadas";
+});
+let pending = null;
+function practiceHit(ch) {
+  const t = tokens[cursor]; if (!t) return;
+  if (!pending) pending = new Set(t.notes);
+  pending.delete(ch);
+  if (pending.size === 0) { pending = null; cursor = nextNoteIdx(cursor + 1); if (cursor >= tokens.length) { status.textContent = "¡Completado! 🎉"; practice = false; mark(-1); } else mark(cursor); }
+}
+</script>
+</body>
+</html>
