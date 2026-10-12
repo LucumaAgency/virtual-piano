@@ -29,7 +29,7 @@ Las partituras viven en `songs/<slug>.txt`; cada una necesita su `<option value=
 - Tempo por la moda de los intervalos entre ataques (tomado como corchea). Como el video es una interpretación con rubato, convertir luego con `midi2vp.py <mid> --grid 2` (sin `--auto`, para conservar las notas del video). Las alturas son absolutas; si se prefiere una octava arriba, `--transpose 12`.
 - Escribe imágenes de depuración en `video-work/` (ignorada por git).
 
-Ejemplo: "A Moment of Relief" (Code Veronica, video Synthesia de 88 teclas, 80 bpm) → `video2midi.py video.mp4 songs/re-code-veronica-video.mid --hue 30-130 --intro 0 --bpm 80 --kb 585-650 --minframes 2` (262 notas; azul = mano derecha, verde = izquierda; el teclado ocupa y 570-715 así que la calibración automática falla y se pasa `--kb`) → `midi2vp.py ... --grid auto`. Los videos fuente (mp4) no van en el repo.
+Lección aprendida (2026-10-12): el umbral de ancho negra/blanca se calcula del teclado, pero Synthesia dibuja las barras más estrechas que las teclas (blanca ≈16 px, negra ≈14 px frente a teclas de 23/15 px), así que todas las blancas se clasificaban como la negra vecina. Medir los anchos reales de las barras y pasar `--thr`. Para "A Moment of Relief" (Code Veronica) se usó directamente el MIDI oficial del video: `songs/re-code-veronica-synthesia.mid` → `midi2vp.py ... --grid auto` (273 notas, 80 bpm, rejilla de semicorchea exacta).
 
 ## Publicación
 Está publicado en Lucuma Previews como `lucuma/piano-virtual`. Subir una versión nueva:

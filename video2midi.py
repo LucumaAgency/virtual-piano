@@ -20,6 +20,7 @@ ap.add_argument("--maxbars", type=int, default=12)
 ap.add_argument("--kb", default="auto", help="franja del teclado ya0-ya1 (p.ej. 630-710) o auto")
 ap.add_argument("--bpm", default="auto")
 ap.add_argument("--intro", type=float, default=5.0, help="segundos iniciales en que se completa con una franja baja (y 300-340), por si un destello de intro tapa la franja alta")
+ap.add_argument("--thr", type=float, default=0, help="umbral de ancho de barra (px) negra/blanca; 0 = (ancho negra + ancho blanca)/2 del teclado. OJO: Synthesia dibuja las barras más estrechas que las teclas (blanca ≈16px, negra ≈14px con teclas de 23/15px): mide los anchos reales de las barras y pásalo a mano")
 ap.add_argument("--debug", action="store_true")
 a = ap.parse_args()
 
@@ -61,7 +62,7 @@ bmidi = []
 for i in range(52):
     if NAMES[i % 7] in OFF and i < 51: bmidi.append(whites[i][0] + 1)
 blacks = list(zip(bmidi, blacks))
-bw = np.median([q - p for p, q in segs]); THR = (bw + ww) / 2   # umbral de ancho negra/blanca
+bw = np.median([q - p for p, q in segs]); THR = a.thr or (bw + ww) / 2   # umbral de ancho negra/blanca
 print(f"# ancho negra {bw:.0f}px, umbral {THR:.0f}px", file=sys.stderr)
 
 def classify(p, q):
