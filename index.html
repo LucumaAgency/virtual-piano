@@ -256,9 +256,11 @@ function baseKey(code) { const m = /^Key([A-Z])$/.exec(code); if (m) return m[1]
 function press(ch, base) {
   if (!keyMap[ch]) return;
   // En práctica, acorde mixto (negras + blancas): con Shift pulsado la blanca llega como negra; se acepta la blanca pedida
-  if (practice && pending && base && !pending.has(ch) && pending.has(base)) ch = base;
+  // (vale también para la primera tecla del acorde, cuando aún no hay "pending": se mira el acorde del cursor)
+  const want = practice ? (pending || (tokens[cursor] && tokens[cursor].type === "notes" ? new Set(tokens[cursor].notes) : null)) : null;
+  if (want && base && !want.has(ch) && want.has(base)) ch = base;
   // ...y al revés: sin Shift, la blanca pulsada vale por la negra pedida (se oye la negra correcta)
-  if (practice && pending && !pending.has(ch)) { const up = SHIFT[ch] || (/^[a-z]$/.test(ch) ? ch.toUpperCase() : null); if (up && pending.has(up)) ch = up; }
+  if (want && !want.has(ch)) { const up = SHIFT[ch] || (/^[a-z]$/.test(ch) ? ch.toUpperCase() : null); if (up && want.has(up)) ch = up; }
   noteOn(ch);
   keyEls[ch].classList.add("on");
   if (practice) practiceHit(ch);
