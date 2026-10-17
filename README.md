@@ -3,9 +3,9 @@
 Clon funcional de la mecánica de virtualpiano.net en un solo archivo `index.html` (sin dependencias ni build).
 
 - 61 teclas (C2–C7) con el mismo mapeo QWERTY: `1234567890qwertyuiopasdfghjklzxcvbnm` = blancas; Shift (`!@$%^*(` y mayúsculas) = negras.
-- Partituras en notación de letras: `[abc]` acorde, espacio pausa, `-` pausa larga, `|` compás.
+- Partituras en notación de letras: `[abc]` acorde, espacio o `.` = pausa de media pulsación, `-` = pausa de una pulsación, `|` compás (solo visual). Cada nota dura media pulsación del reproductor (no hay duraciones).
 - Reproducción automática con tempo, resaltado de la partitura y de las teclas, 2 líneas de anticipación.
-- Modo práctica: avanza solo al tocar la tecla correcta.
+- Modo práctica: avanza solo al tocar la tecla correcta. Acordes mixtos (negras + blancas, p. ej. `[qsH]`): se aceptan con Shift mantenido en todas, sin Shift en ninguna, y en cualquier orden de teclas. Bloq Mayús vale como Shift sostenido también para los números (1-0 → !@#$%^&*()).
 - Partitura bloqueada; botón "Editar partitura" para pegar otra. Si se pega el HTML `#song-pattern` de virtualpiano.net se convierte solo.
 
 Servir por http (los samples no cargan con `file://`): `python3 -m http.server` y abrir `http://localhost:8000`, o publicar en cualquier hosting estático.
@@ -32,8 +32,25 @@ Las partituras viven en `songs/<slug>.txt`; cada una necesita su `<option value=
 Daydreaming (Radiohead, Synthesia 1080p con letras dentro de las barras y partículas) se leyó el 2026-10-12 con `--kb 840-960 --merge 30 --bycenter --y0 100 --y1 106 --minframes 2 --bpm 91.5` y `midi2vp.py --grid 6` (1887 notas; la letra parte cada barra en dos tramos, por eso `--merge`; las barras van centradas en la tecla, por eso `--bycenter` en vez del ancho; franja de 6 px para que la letra no la cruce). Tras leer unos 20 s hay que comprobar las primeras notas contra un fotograma antes de procesar todo. Lección aprendida (2026-10-12): el umbral de ancho negra/blanca se calcula del teclado, pero Synthesia dibuja las barras más estrechas que las teclas (blanca ≈16 px, negra ≈14 px frente a teclas de 23/15 px), así que todas las blancas se clasificaban como la negra vecina. Medir los anchos reales de las barras y pasar `--thr`. Para "A Moment of Relief" (Code Veronica) se usó directamente el MIDI oficial del video: `songs/re-code-veronica-synthesia.mid` → `midi2vp.py ... --grid auto` (273 notas, 80 bpm, rejilla de semicorchea exacta). Desde 2026-10-12 el conversor escribe las pausas exactas (`.` = 1 celda, `-` = 2 celdas; nota = 1 celda) y avisa del tempo que hay que poner en el reproductor (bpm × rejilla / 2); antes redondeaba los huecos y el ritmo salía distinto en algunos pasajes.
 
 ## Publicación
-Está publicado en Lucuma Previews como `lucuma/piano-virtual`. Subir una versión nueva:
+Está publicado en Lucuma Previews como `lucuma/piano-virtual` (v20 el 2026-10-14). Subir una versión nueva:
 `node ../previews/push.js lucuma piano-virtual . --nota "..."` (push.js ignora README, .py y .mid).
+
+## Bitácora
+
+### 2026-10-11 · MVP
+Reproductor en un solo `index.html` (61 teclas, mapeo QWERTY de virtualpiano.net, autoplay, práctica, samples Salamander + 9 timbres). `midi2vp.py` (MIDI → letras) y primera versión de `video2midi.py` (video de barras → MIDI). 19 canciones (Coldplay, Radiohead, Resident Evil, Here to Stay). Publicado en Lucuma Previews.
+
+### 2026-10-12 · repo, Code Veronica y Daydreaming
+- Repo `LucumaAgency/virtual-piano`; mp4 y carpetas de trabajo fuera del proyecto (`../piano-virtual-media/`), `.gitignore` para videos, `video-work/`, `trabajo/`.
+- Save Room de Code Veronica: la transcripción del video original estaba mal. Se leyó el video Synthesia "A Moment of Relief" (ritmo correcto, pero todas las blancas salían como la negra vecina: Synthesia dibuja barras más estrechas que las teclas → `--thr`). Al final se usó el MIDI oficial del video: `songs/re-code-veronica-synthesia.*`. Las otras dos versiones (Save Room piano/completo, de MIDI antiguo) se retiraron a `piano-virtual-media/descartadas/`.
+- `midi2vp.py`: pausas exactas (`.` = 1 celda, `-` = 2 celdas; antes redondeaba los huecos y el ritmo salía distinto en algunos pasajes) y aviso del tempo que hay que poner en el reproductor (bpm × rejilla / 2). Verificación de ida y vuelta partitura ↔ MIDI.
+- Daydreaming: retranscrito desde video Synthesia 1080p (letras dentro de las barras, partículas). `video2midi.py` gana `--merge`, `--bycenter`, `--end` y `--thr`. 1887 notas, rejilla 6, reproducir a 275 bpm (deslizador de tempo ampliado a 300). La versión "completo" (MIDI antiguo) se mantiene.
+- Enlace para compartir: `node ../previews/push.js acceso lucuma` genera un enlace de cliente sin contraseña (renovable con `--renew`).
+
+### 2026-10-14 · modo práctica
+- Acordes mixtos sin Shift: `[yraO]` se acepta tocando `y r a o` (y se oye la negra correcta). Antes solo valía mantener Shift en todas.
+- Bloq Mayús: convierte también 1-0 en sus negras (el navegador no cambia los dígitos con Bloq Mayús, por eso `8 9 0` no sonaban como `* ( )`).
+- Orden de teclas: si la primera tecla del acorde era la que lleva Shift (`h` antes que `q s` en `[qsH]`) se trababa; ahora se compara siempre contra el acorde del cursor. Probado en Chromium con Playwright: `q s h`, `h s q`, `s h q`, con y sin Shift, y el pasaje `[$Og] [*PG] [qsH] [@S] g H [$J]` de corrido sin Shift.
 
 ## Pendiente: Daydreaming, pasajes con C#/F# (2026-10-12)
 El usuario oye mal las líneas 23, 25, 27, 29, 42, 44, 46, 48, 50, 52, 54, 56, 58 y 60 de `songs/daydreaming.txt` (las que llevan `T`, `I`, `E`, `^` y guiones, p. ej. `p-Tu-Iu-.p-Iy.T.u-.`) y espera ahí el patrón blanco `p.t.y.i.u.t.p.i.y.t.u.i.` (o `[6p].t.y.[6i].u.t.[6p].i.y.[6t].u.i.`).
